@@ -28,10 +28,10 @@ public:
 	UFUNCTION()
 	void InteractableStateChanged(const FInteractableStateArgs& StateArgs);
 
-	/** 
-	  * When the button is in action or contact events it has to respond by
-	  * moving up and down.
-	  */
+	/**
+	 * When the button is in action or contact events it has to respond by
+	 * moving up and down.
+	 */
 	UFUNCTION()
 	void ActionOrInContactZoneStayEvent(const FColliderZoneArgs& ZoneArgs);
 

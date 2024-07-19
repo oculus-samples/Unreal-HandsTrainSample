@@ -38,7 +38,7 @@ struct FColliderZoneArgs
 	}
 };
 
-/** 
+/**
  * Used when interactable change state, which means a tool is involved
  * in its state change. */
 USTRUCT(BlueprintType)
@@ -105,7 +105,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tools / Collisions")
 	UColliderZone* ActionZone;
 
-	/** 
+	/**
 	 * While these events will tell you if a tool has entered an interactable's
 	 * specific zone, the interactable might not go into the associated state.
 	 * If a finger is pressing a button incorrectly even though it's in

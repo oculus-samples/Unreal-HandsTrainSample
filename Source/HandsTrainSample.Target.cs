@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 public class HandsTrainSampleTarget : TargetRules
 {
-	public HandsTrainSampleTarget(TargetInfo Target) : base(Target)
-	{
-		Type = TargetType.Game;
-		DefaultBuildSettings = BuildSettingsVersion.V4;
-		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_3;
-		ExtraModuleNames.AddRange(new string[] { "HandsTrainSample" });
-	}
+    public HandsTrainSampleTarget(TargetInfo Target) : base(Target)
+    {
+        Type = TargetType.Game;
+        DefaultBuildSettings = BuildSettingsVersion.V4;
+        IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_3;
+        ExtraModuleNames.AddRange(new string[] { "HandsTrainSample" });
+    }
 }

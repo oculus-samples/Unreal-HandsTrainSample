@@ -204,7 +204,7 @@ protected:
 	FVector InteractionPosition;
 	FVector CalculatedToolVelocity;
 
-	/** 
+	/**
 	 * These arrays are created now so they don't need to be
 	 * constructed per use. Inherited classes tend to use
 	 * these arrays so putting them in the base class

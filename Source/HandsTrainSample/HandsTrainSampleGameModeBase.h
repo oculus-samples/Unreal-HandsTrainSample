@@ -7,7 +7,7 @@
 #include "HandsTrainSampleGameModeBase.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class HANDSTRAINSAMPLE_API AHandsTrainSampleGameModeBase : public AGameModeBase

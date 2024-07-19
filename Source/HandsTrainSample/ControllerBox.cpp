@@ -371,7 +371,7 @@ void AControllerBox::Tick(float DeltaTime)
 	 * 4) Make sure head stabilizes and isn't moving too fast currently.
 	 * -AND-
 	 * 5) We are not lerping
-	*/
+	 */
 	if (((DistanceFromHMDPosToLastPos > MaxDistanceFromHMDToLastPos) || (MinDistanceToHMD > CurrDistanceFromHMD) || (MinDepthToHMD > HMDToMyLocation.X)) && (HeadMovementSpeed < HmdMovementThreshold)
 		&& !bIsLerpingToHMD)
 	{

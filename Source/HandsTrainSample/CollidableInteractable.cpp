@@ -174,12 +174,12 @@ EInteractableState ACollidableInteractable::GetUpcomingStateNearField(EInteracta
 												  : EInteractableState::Default;
 			}
 			/**
-		 * Can only go to action state if contact is legal.
-		 * If tool goes into contact state due to proper movement,
-		 * but does not maintain that movement throughout (i.e. a tool/finger
-		 * presses downwards initially but moves in random directions
-		 * afterwards), then don't go into action state
-		 */
+			 * Can only go to action state if contact is legal.
+			 * If tool goes into contact state due to proper movement,
+			 * but does not maintain that movement throughout (i.e. a tool/finger
+			 * presses downwards initially but moves in random directions
+			 * afterwards), then don't go into action state
+			 */
 			else if (ToolIsInActionZone && ValidContact && OnPositiveSideOfButton)
 			{
 				UpcomingState = EInteractableState::ActionState;

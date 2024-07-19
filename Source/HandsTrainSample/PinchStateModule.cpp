@@ -43,7 +43,7 @@ bool PinchStateModule::UpdateState(float PinchStrength,
 	switch (OldPinchState)
 	{
 		case EPinchState::PinchUp:
-			/** 
+			/**
 			 * Can only be in pinch for a single frame.
 			 *  So consider the next frame carefully. */
 			if (IsPinching)
@@ -84,7 +84,7 @@ bool PinchStateModule::UpdateState(float PinchStrength,
 			if (IsPinching)
 			{
 				CurrentPinchState = EPinchState::PinchDown;
-				/** 
+				/**
 				 * This is the interactable that must be focused
 				 * throughout the pinch up and down gesture. */
 				FirstFocusedInteractable = CurrentFocusedInteractable;

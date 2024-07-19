@@ -86,16 +86,16 @@ void UButtonMeshHelper::ActionOrInContactZoneStayEvent(
 	}
 
 	/** Calculate how much the button should be pushed inwards based on the contact
-	  * zone. The collider's dimension is required for this. Another way to test
-	  * distances is to measure distance to the plane that represents where the button
-	  * translation must stop. */
+	 * zone. The collider's dimension is required for this. Another way to test
+	 * distances is to measure distance to the plane that represents where the button
+	 * translation must stop. */
 	FVector InteractionPosition = ZoneArgs.CollidingTool->GetInteractionPosition();
 	const FTransform& ContactZoneTransform = Button->ContactZone->GetComponentTransform();
 	FVector PositionInContactZoneLocalSpace = ContactZoneTransform.InverseTransformPosition(
 		InteractionPosition);
 	/** Calculate how far button press must be. If we are on the button surface,
-	  * or depth units away, then no travel is necessary, for instance. The travel
-	  * length is calculate based on max button depth. */
+	 * or depth units away, then no travel is necessary, for instance. The travel
+	 * length is calculate based on max button depth. */
 	float DepthPositionClamped = FMath::Clamp(PositionInContactZoneLocalSpace.X,
 		0.0f, ButtonDepth);
 	float ButtonTravel = ButtonDepth - DepthPositionClamped;
