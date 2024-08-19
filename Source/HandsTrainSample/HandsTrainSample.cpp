@@ -1,4 +1,10 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+/*
+Copyright (c) Meta Platforms, Inc. and affiliates.
+All rights reserved.
+
+This source code is licensed under the license found in the
+LICENSE file in the root directory of this source tree.
+*/
 
 #include "HandsTrainSample.h"
 #include "Modules/ModuleManager.h"
