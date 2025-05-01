@@ -43,6 +43,9 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Initialization")
 	void AssociateToolWithHand(UOculusXRHandComponent* Hand, AInteractableTool* Tool);
 
+	UFUNCTION(BlueprintCallable, Category = "Initialization")
+	void ClearHandCapsulesCollision(UOculusXRHandComponent* Hand);
+
 	UPROPERTY()
 	TSet<AInteractableTool*> LeftHandNearTools;
 	UPROPERTY()

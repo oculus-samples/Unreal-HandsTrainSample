@@ -48,6 +48,21 @@ void AInteractableToolsManager::AssociateToolWithHand(UOculusXRHandComponent* Ha
 	}
 }
 
+void AInteractableToolsManager::ClearHandCapsulesCollision(UOculusXRHandComponent* Hand)
+{
+	TArray<FOculusXRCapsuleCollider>& HandCapsules = Hand->CollisionCapsules;
+
+	for (auto CapsuleCollider : HandCapsules)
+	{
+		auto CapsuleComp = CapsuleCollider.Capsule;
+		CapsuleComp->CanCharacterStepUpOn = ECanBeCharacterBase::ECB_No;
+		CapsuleComp->SetCanEverAffectNavigation(false);
+		CapsuleComp->SetGenerateOverlapEvents(false);
+		CapsuleComp->SetCollisionResponseToAllChannels(
+			ECollisionResponse::ECR_Ignore);
+	}
+}
+
 void AInteractableToolsManager::RegisterInteractableTool(AInteractableTool* InteractableTool)
 {
 	if (InteractableTool->IsRightHandedTool)

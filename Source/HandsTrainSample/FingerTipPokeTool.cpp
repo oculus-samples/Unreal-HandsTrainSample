@@ -100,8 +100,6 @@ void AFingerTipPokeTool::Initialize_Implementation(UOculusXRHandComponent* HandC
 	for (auto CapsuleCollider : HandCapsules)
 	{
 		auto CapsuleComp = CapsuleCollider.Capsule;
-		CapsuleComp->CanCharacterStepUpOn = ECanBeCharacterBase::ECB_No;
-		CapsuleComp->SetCanEverAffectNavigation(false);
 		// See DefaultEngine.ini for a mapping between this enum and the custom
 		// traces/objects set up in Project Settings->Engine->Collision.
 		// the interactable collision zones only accept a specific channel,
@@ -117,12 +115,6 @@ void AFingerTipPokeTool::Initialize_Implementation(UOculusXRHandComponent* HandC
 			CapsuleComp->SetCollisionResponseToChannel(
 				ECollisionChannel::ECC_GameTraceChannel3,
 				ECollisionResponse::ECR_Overlap);
-		}
-		else
-		{
-			CapsuleComp->SetGenerateOverlapEvents(false);
-			CapsuleComp->SetCollisionResponseToAllChannels(
-				ECollisionResponse::ECR_Ignore);
 		}
 	}
 
