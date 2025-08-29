@@ -53,3 +53,11 @@ Make sure you have Visual Studio installed properly:
 
 # Licenses
 The Meta License applies to the SDK and supporting material. The MIT License applies to only certain, clearly marked documents. If an individual file does not indicate which license it is subject to, then the Meta License applies.
+
+# Changelog
+## April 2025
+- Update to use OpenXR from Epic
+
+# Known Issues
+- If running on a Quest2 device, you may experience low FPS when using GPU occlusion. You can either switch to the [Meta Fork of Unreal Engine](https://github.com/Oculus-VR/UnrealEngine) and use CPU Occlusions (UE5.5.4 or later)
+or add `r.AllowOcclusionQueries 0` over a [blueprint node](https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Development/ExecuteConsoleCommand). See LevelBlueprint as example.
