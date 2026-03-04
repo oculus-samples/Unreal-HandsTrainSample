@@ -108,7 +108,7 @@ void ATrackSegment::UpdatePoseInSegment(float DistanceIntoSegment, FTransform& P
 void ATrackSegment::EnableMeshAndRegenerateTrack()
 {
 	for (unsigned int SegmentTypeIndex = (unsigned int)ESegmentType::Straight;
-		 SegmentTypeIndex <= (unsigned int)ESegmentType::RightTurn; SegmentTypeIndex++)
+		SegmentTypeIndex <= (unsigned int)ESegmentType::RightTurn; SegmentTypeIndex++)
 	{
 		ToggleStaticMesh(SegmentMeshes[SegmentTypeIndex],
 			SegmentTypeIndex == (unsigned int)TrackSegmentType);

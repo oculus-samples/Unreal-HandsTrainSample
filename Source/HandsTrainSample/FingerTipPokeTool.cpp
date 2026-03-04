@@ -61,7 +61,7 @@ void AFingerTipPokeTool::Tick(float DeltaTime)
 	SetActorLocation(ToolPosition);
 	SetActorRotation(UKismetMathLibrary::MakeRotFromXZ(
 		CapsuleDirection, CapsuleRotation.GetRightVector())
-						 .Quaternion());
+			.Quaternion());
 
 	InteractionPosition = CapsuleTipPosition;
 
@@ -186,7 +186,7 @@ void AFingerTipPokeTool::UpdateAverageVelocity(float DeltaTime)
 	uint32 NumFramesToSample = SampledMaxFramesAlready ? NumVelocityFrames
 													   : CurrentVelocityFrame + 1;
 	for (uint32 FrameIndex = 0; FrameIndex < NumFramesToSample;
-		 FrameIndex++)
+		FrameIndex++)
 	{
 		CalculatedToolVelocity += VelocityFrames[FrameIndex];
 	}

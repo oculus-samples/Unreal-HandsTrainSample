@@ -17,6 +17,8 @@ LICENSE file in the root directory of this source tree.
 #include "Components/InstancedStaticMeshComponent.h"
 #include <cmath>
 
+#include "Engine/OverlapResult.h"
+
 const float ARayTool::MinimumRaycastDistance = 80.0f;
 const float ARayTool::ColliderRadius = 1.0f;
 

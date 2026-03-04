@@ -90,7 +90,7 @@ void AHandsActiveChecker::Tick(float DeltaTime)
 			SetActorRotation(UKismetMathLibrary::MakeRotFromXZ(
 				-TransformedQuat.GetForwardVector(),
 				TransformedQuat.GetUpVector())
-								 .Quaternion());
+					.Quaternion());
 		}
 	}
 }
