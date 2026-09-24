@@ -115,11 +115,21 @@ void ARayTool::Tick(float DeltaTime)
 	Hand->SetRenderCustomDepth(true);
 	FTransform PointerPoseTransform =
 		UOculusXRInputFunctionLibrary::GetPointerPose(Hand->SkeletonType);
-	FVector CurrentPosition = PointerPoseTransform.GetLocation();
+
+	// Offset start of ray from behind wrist to center of palm
+	FQuat HandOrientation = PointerPoseTransform.GetRotation();
+	// +X = towards fingers. -Y = Thumb direction when fingers spread. -Z = Normal of palm.
+	FVector RayStartOffsetLocal = FVector(20.0, 0.0, 1.0);
+	FVector RayStartOffset;
+	VectorStoreFloat3(
+		VectorQuaternionRotateVector(VectorLoadAligned(&HandOrientation), VectorLoadFloat3(&RayStartOffsetLocal)),
+		&RayStartOffset);
+
+	FVector CurrentPosition = PointerPoseTransform.GetLocation() + RayStartOffset;
 	APawn* MainPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
 	CurrentPosition += MainPawn->GetActorLocation();
 	SetActorLocation(CurrentPosition);
-	SetActorRotation(PointerPoseTransform.GetRotation());
+	SetActorRotation(HandOrientation);
 
 	auto PrevPosition = InteractionPosition;
 	CalculatedToolVelocity = (CurrentPosition - PrevPosition) / DeltaTime;

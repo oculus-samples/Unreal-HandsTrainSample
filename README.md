@@ -61,3 +61,9 @@ The [Meta License](./LICENSE) applies to the SDK and supporting material. The MI
 # Known Issues
 - If running on a Quest2 device, you may experience low FPS when using GPU occlusion. You can either switch to the [Meta Fork of Unreal Engine](https://github.com/Oculus-VR/UnrealEngine) and use CPU Occlusions (UE5.5.4 or later)
 or add `r.AllowOcclusionQueries 0` over a [blueprint node](https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Development/ExecuteConsoleCommand). See LevelBlueprint as example.
+
+## AI coding agents
+
+This repo is wired up for AI coding agents — `AGENTS.md`, `.vscode/extensions.json`, `.mcp.json`, `.cursor/rules/`, and a few client-specific dotfiles surface the **Meta Horizon** VS Code/Cursor extension, the `hzdb` MCP server, and the Meta Quest skill set automatically.
+
+Full toolchain, including Unreal skills and per-client install instructions: [github.com/meta-quest/agentic-tools](https://github.com/meta-quest/agentic-tools).
