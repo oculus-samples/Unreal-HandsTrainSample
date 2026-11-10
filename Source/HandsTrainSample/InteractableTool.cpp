@@ -77,7 +77,6 @@ FCollisionInfoKeyValuePair AInteractableTool::
 			FirstCollisionInfo.Interactable = Elem.Key;
 			FirstCollisionInfo.CollisionInfo = Elem.Value;
 		}
-		break;
 	}
 	return FirstCollisionInfo;
 }
